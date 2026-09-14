@@ -13,12 +13,20 @@ app = FastAPI(
 FILE_ID = "1VuWu4AhEzkrHVySdHXaAQK45tqJPRC8a"
 MODEL_PATH = "model.pkl"
 
-gdown.download(
-    f"https://drive.google.com/uc?id={FILE_ID}",
-    MODEL_PATH,
-    quiet=False
-)
+# Download model only if it doesn't exist
+if not os.path.exists(MODEL_PATH):
+    print("Model not found. Downloading...")
 
+    gdown.download(
+        f"https://drive.google.com/uc?id={FILE_ID}",
+        MODEL_PATH,
+        quiet=False
+    )
+
+else:
+    print("Model already exists. Skipping download.")
+
+# Load model
 model = joblib.load(MODEL_PATH)
 
 print("Model loaded successfully!")
