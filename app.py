@@ -11,7 +11,7 @@ app = FastAPI(
     version="1.0.0" 
     )
 
-FILE_ID = "1VuWu4AhEzkrHVySdHXaAQK45tqJPRC8a"
+FILE_ID = "1SZDg3bYaAF98hHzSBbJjJ3_uaRbF7Fhv"
 MODEL_PATH = "model.pkl"
 
 # Download model only if it doesn't exist
