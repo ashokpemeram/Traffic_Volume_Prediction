@@ -3,6 +3,7 @@ from pydantic import BaseModel
 import joblib 
 import numpy as np 
 import gdown
+import os
 
 app = FastAPI(    
     title="ML Model API",    
