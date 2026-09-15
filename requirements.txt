@@ -4,3 +4,4 @@ joblib
 numpy
 gdown
 scikit-learn==1.7.2
+uvicorn
