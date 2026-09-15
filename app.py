@@ -11,34 +11,34 @@ app = FastAPI(
     version="1.0.0" 
     )
 
-FILE_ID = "1hV1f-PX8lYDpYneNMwuuf64U0I2Ni8lV"
-MODEL_PATH = "model.pkl"
+# FILE_ID = "1hV1f-PX8lYDpYneNMwuuf64U0I2Ni8lV"
+# MODEL_PATH = "model.pkl"
 
-# Download model only if it doesn't exist
-if not os.path.exists(MODEL_PATH):
-    print("Model not found. Downloading...")
+# # Download model only if it doesn't exist
+# if not os.path.exists(MODEL_PATH):
+#     print("Model not found. Downloading...")
 
-    gdown.download(
-        f"https://drive.google.com/uc?id={FILE_ID}",
-        MODEL_PATH,
-        quiet=False
-    )
+#     gdown.download(
+#         f"https://drive.google.com/uc?id={FILE_ID}",
+#         MODEL_PATH,
+#         quiet=False
+#     )
 
-else:
-    print("Model already exists. Skipping download.")
+# else:
+#     print("Model already exists. Skipping download.")
 
-# Load model
-model = joblib.load(MODEL_PATH)
+# # Load model
+# model = joblib.load(MODEL_PATH)
 
-print("Model loaded successfully!")
+# print("Model loaded successfully!")
 
-# MODEL_PATH = "model.pkl" 
-# try:    
-#     model = joblib.load(MODEL_PATH)    
-#     print("Model loaded successfully") 
-# except Exception as e:    
-#     print("Error loading model:", e)    
-#     model = None
+MODEL_PATH = "model.pkl" 
+try:    
+    model = joblib.load(MODEL_PATH)    
+    print("Model loaded successfully") 
+except Exception as e:    
+    print("Error loading model:", e)    
+    model = None
 
 class RegressionInput(BaseModel):    
     holiday: int
